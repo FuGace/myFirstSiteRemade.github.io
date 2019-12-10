@@ -82,23 +82,277 @@ a {
     border-right: 1px solid #444;
 }
 
+/* Menu */
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu img {
+
+}
+
+.menu__border {
+    border: 1px solid #949393;
+}
+
+.menu__border__card {
+    border-bottom: 1px solid #949393;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Slider header */
+
+.header__slider {
+    background-color: #f6f3ec;
+}
+
+.crazy-summer img {
+    margin-left: auto;
+    width: 100%;
+}
+
+.header__slider__dots {
+    
+}
+
+.header__slider__dots_dot {
+    
+    color: #867a76;
+    display: inline-block;
+    margin: 20px 8px;
+    font-size: 40px; 
+    text-decoration: none;
+    user-select: none;  
+    cursor: pointer; 
+    transition: color 0.6s ease;
+}
+
+.active,
+.header__slider__dots_dot:hover {
+    color: #fd926d;
+    transition: 0.6s ease;
+}
+
+/* Section */
+/* Grey background */
+
+.container_gray {
+    background-color: #ededed;
+    color: #6b6b6b;
+    font-size: 12px;
+}
+
+.container__inner__subscription {
+    justify-content: space-between;
+}
+
+.subscription__email {
+    display: flex;
+    align-items: center;
+}
+
+.subscription__email input[type="text"] {    
+    font-size: 12px;
+    height: 24px; 
+    font-style: italic;
+    margin-left: 10px;     
+}
+
+.subscription__email input[type="submit"] {
+    background: #fd926d url(IMG/plus.png) no-repeat 50%;
+    border: 0px;
+    width: 28px;
+    height: 28px;
+    border-bottom: 3px solid #dd6b44;
+}
+
+.social-network {
+    display: flex;
+    align-items: center;
+}
+
+.social-network_text {
+    margin-right: 15px;
+}
+
+.social-network a {
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+}
+
+.social-network a:nth-child(even) {
+    background-color: #f7f7f7;   
+}
+
+.social-network img {
+    height: 17px;
+    vertical-align: middle;
+}
+
+/* Goods2 */
+
+.goods__bottom-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.good {    
+    list-style: none;
+    background-color: #f7f7f7;
+    text-align: center;
+    color: #373737;
+    position: relative;
+}
+
+.good__description {
+    font-size: 12px;
+    margin: 5px 0;  
+}
+
+.good__price {
+    font-size: 22px;    
+}
+
+.good__sale::after {
+    display: flex;
+    content: "SALE";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;    
+    background-color: #4c4c4c;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.good__sale::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    border-bottom: 50px solid #ffffff;   
+    border-left: 50px solid transparent;
+}
+
+.good__button-pay {
+    display: inline-block;    
+    color: white;
+    font-size: 15px;
+    text-decoration: none;  
+    user-select: none;
+    padding: 5px 10px;
+    border-bottom: 3px solid #dd6b44;
+    background: #fd926d;  
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Clearance */
+
+.clearance-wrapper {
+    display: flex;    
+    position: relative;
+    width: 100%;
+    padding: 25px 0;   
+}
+
+.clearance__img {
+    width: 157px;
+    margin: 0 auto;   
+}
+
+.clearance-wrapper::before,
+.clearance-wrapper::after {
+    content: '';
+    width: calc(100% - 50% - 100px);
+    height: 1px;
+    background-color: #b2b2b2;
+    position: absolute;
+    top: calc(100% - 50% - 1px);
+}
+
+.clearance-wrapper:after {
+    left: 0;
+}
+
+.clearance-wrapper::before {
+    right: 0;
+}
+
 /* Footer */
 
-.about {
+.favourite-brands {
+    border-bottom: 1px solid #b2b2b2; 
+    flex-direction: column;
+    margin: 60px 0 30px 0;
+}
+
+.favourite-brands_text {
+    display: inline-block;    
+    color: #414141;
+    font-size: 15px;
+    position: relative;
+    width: 100%;  
+    margin: 0;
+    text-align: center;
+}
+
+.favourite-brands_links {
+    justify-content: space-between;
+    padding: 15px 0;
+    width: 100%
+}
+
+.favourite-brands_text::before,
+.favourite-brands_text::after {
+    content: '';
+    width: calc(100% - 50% - 100px);
+    height: 1px;
+    background-color: #b2b2b2;
+    position: absolute;
+    top: calc(100% - 50% - 1px);
+}
+        
+.favourite-brands_text::after {
+    left: 0;
+}
+        
+.favourite-brands_text::before {
+    right: 0;
+}
+
+/* Favourite brands */
+
+/* About LookShop */
+
+.about-shops {
     display: block;    
     text-align: center;
 }
 
-.about h3 {
+.about-shops h3 {
     font-size: 24px; 
     color: #414141;
 }
 
-.about p {   
+.about-shops p {   
     margin: 15px 10px 30px 10px;
     font-size: 15px; 
     color: #999999;
 }
+
+/* Accept */
 
 .container_light-grey {
     background: #f7f7f7;
@@ -174,6 +428,8 @@ nav div {
     height: 107px;
     margin: auto 0; 
 }
+
+/* Footer BLACK */
 
 .footer_black {
     display: flex;
