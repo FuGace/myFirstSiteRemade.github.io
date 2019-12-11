@@ -23,8 +23,22 @@ body {
     align-items: center;
 }
 
+ul,
+li {
+    list-style: none;    
+}
+
 a {
     text-decoration: none;
+}
+
+.arrow-top {
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: black;
+    border-bottom: 0;
+    display: inline-block;
 }
 
 /* Header */
@@ -90,24 +104,100 @@ a {
     align-items: center;
 }
 
-.menu img {
+.menu__list {
+    display: flex;
+    margin-left: auto;
+}
 
+.menu__list__top > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 25px;   
+}
+
+.menu__list__top a {
+    transition: .5s linear;
+    color: black;
+    font-size: 18px;
+}
+
+.menu__list__top .arrow-top {
+    margin-left: 4px;
+}
+
+.new__submenu,
+.designers__submenu,
+.women__submenu,
+.men__submenu,
+.clearence__submenu {
+    position: absolute;
+    transition: 0.5s ease-in-out;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+}
+
+.menu__list__top ul {
+    background-color: black;    
+}
+
+.menu__list__top ul li {
+    border-bottom: 1px solid white;
+    width: 100px;
+    padding: 10px 0 10px 10px;
+}
+
+.menu__list__top ul li a {
+    color: white;
+}
+
+.menu__list ul li:hover ul {
+    transform: scaleY(1);
 }
 
 .menu__border {
     border: 1px solid #949393;
+    color: #949393;
+    font-size: 12px;
+    width: 215px;
+    margin: 20px 0;
 }
 
-.menu__border__card {
+.border__card {
     border-bottom: 1px solid #949393;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.border__card p {
+    margin: 12px 0 12px 10px;
+}
+
+.border__card .arrow-top {
+    border-top-color: #949393;
+    margin-right: 12px;
+}
+
+.border__basket {
+    display: flex;
+    justify-content: space-between;   
+}
+
+.border__basket__img {
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.border__basket__amount {
+    margin: 12px 10px 12px 0;
 }
 
 /* Slider header */
 
 .header__slider {
-    background-color: #f6f3ec;
+    background-color: #f6f3ec;    
 }
 
 .crazy-summer img {
@@ -195,8 +285,89 @@ a {
     vertical-align: middle;
 }
 
-/* Goods2 */
+/* IMG menu */
 
+.container__inner__img-menu{
+    margin: 40px;
+}
+
+.container__inner__img-menu img {
+    width: 50%;
+}
+
+/* Orange slider */
+
+.container_orange {
+    display: grid;    
+}
+
+.goods__container_orange {
+    background-color: #fd926d;
+    width: 100%;
+}
+
+.slider-orange__header p {
+    padding: 19px;
+    color: #555555;
+}
+
+.slider-orange__header p:nth-child(1) {
+    background-color: #fd926d;
+    color: white;
+}
+
+.slider-orange__header__arrow-left {
+    margin-left: auto;
+    background-color: #f2f2f2;
+    color: #979797;
+}
+
+.slider-orange__header__arrow-left,
+.slider-orange__header__arrow-right {
+    padding: 7px 20px;
+    font-size: 30px;    
+}
+
+.slider-orange__header__arrow-right {
+    background-color: #fd926d;
+    color: white;
+}
+
+/* Clearance */
+
+.clearance-wrapper {
+    display: flex;    
+    position: relative;
+    width: 100%;
+    padding: 25px 0;   
+}
+
+.clearance__img {
+    width: 157px;
+    margin: 0 auto;   
+}
+
+.clearance-wrapper::before,
+.clearance-wrapper::after {
+    content: '';
+    width: calc(100% - 50% - 100px);
+    height: 1px;
+    background-color: #b2b2b2;
+    position: absolute;
+    top: calc(100% - 50% - 1px);
+}
+
+.clearance-wrapper:after {
+    left: 0;
+}
+
+.clearance-wrapper::before {
+    right: 0;
+}
+
+/* Goods */
+
+.goods__top-row,
 .goods__bottom-row {
     display: flex;
     justify-content: space-between;
@@ -209,6 +380,10 @@ a {
     text-align: center;
     color: #373737;
     position: relative;
+}
+
+.good__image {
+    width: 220px;
 }
 
 .good__description {
@@ -256,38 +431,6 @@ a {
     background: #fd926d;  
     margin-top: 5px;
     margin-bottom: 10px;
-}
-
-/* Clearance */
-
-.clearance-wrapper {
-    display: flex;    
-    position: relative;
-    width: 100%;
-    padding: 25px 0;   
-}
-
-.clearance__img {
-    width: 157px;
-    margin: 0 auto;   
-}
-
-.clearance-wrapper::before,
-.clearance-wrapper::after {
-    content: '';
-    width: calc(100% - 50% - 100px);
-    height: 1px;
-    background-color: #b2b2b2;
-    position: absolute;
-    top: calc(100% - 50% - 1px);
-}
-
-.clearance-wrapper:after {
-    left: 0;
-}
-
-.clearance-wrapper::before {
-    right: 0;
 }
 
 /* Footer */

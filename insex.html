@@ -32,19 +32,103 @@
         <div class="container">
             <div class="container__inner menu">
                 <img src="IMG/logo.png">
-                <div class="menu__border">
-                    <div class="menu__border__card">
+                <div class="menu__list">
+                    <ul class="menu__list__top">
+                        <li class="menu__list__top__new">
+                            <a href="#">new
+                                <div class="arrow-top"></div>
+                            </a>
+                            <ul class="new__submenu">
+                                <li>
+                                    <a href="#">item 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 3</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 4</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 5</a>
+                                </li>
+                            </ul>   
+                        </li>
+                        <li class="menu__list__top__designers">
+                            <a href="#">designers
+                                <div class="arrow-top"></div>
+                            </a>
+                            <ul class="designers__submenu">
+                                <li>
+                                    <a href="#">item 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 3</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 4</a>
+                                </li>                               
+                            </ul>
+                        </li>
+                        <li class="menu__list__top__women">
+                            <a href="#">women
+                                <div class="arrow-top"></div>
+                            </a>
+                            <ul class="women__submenu">
+                                <li>
+                                    <a href="#">item 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">item 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__list__top__men">
+                            <a href="#">men
+                                <div class="arrow-top"></div>
+                            </a>
+                            <ul class="men__submenu">
+                                <li>
+                                    <a href="#">item 1 </a>
+                                </li>
+                                <li>
+                                    <a href="#">item 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu__list__top__clearence">
+                            <a href="#">clearence
+                                <div class="arrow-top"></div>
+                            </a>
+                            <ul class="clearence__submenu">
+                                <li>
+                                    <a href="#">item 1</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>                        
+                </div>
+                <div class="menu__border">                    
+                    <div class="border__card">
                         <p>Your cart</p>
-                        <p>&#9660</p>
+                        <div class="arrow-top"></div>
                     </div>
-                    <div class="border__cash__bottom">
-                        <div class="border__cash__bottom__basket">
+                    <div class="border__basket">
+                        <div class="border__basket__img">
                             <svg viewBox="0 0 51 49">
                                 <image xlink:href="data:image/png;base64,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" transform="matrix(1,0,0,1,0,0)" >
                                 </image>
                             </svg>
                         </div>
-                        <div class="border__cash__bottom__amount">
+                        <div class="border__basket__amount">
                             <p>0 ITEMS | &#36 0</p>
                         </div>
                     </div>
@@ -87,7 +171,27 @@
                     </a>
                 </div>
             </div>
-        </div>         
+        </div>
+        <div class="container">
+            <div class="container__inner container__inner__img-menu">               
+                <img src="IMG/img-menu__left.png">               
+                <img src="IMG/img-menu__right.png">                
+            </div>
+        </div>
+        <div class="container container_orange">
+            <div class="container__inner slider-orange__header">
+                <p>WHAT’S HOT ?</p>
+                <p>DESIGNERS</p>
+                <p>FEATURED</p>
+                <p>LATEST</p>
+                <a class="slider-orange__header__arrow-left">&#10094</a>
+                <a class="slider-orange__header__arrow-right">&#10095</a>
+            </div>
+            <div class="goods__container goods__container_orange">
+                    <ul class="goods__top-row">
+                    </ul>
+                </div>            
+        </div>                         
         <div class="container">
             <div class="container__inner clearance-wrapper">
                 <img class="clearance__img" src="IMG/clearance.png">                          
@@ -213,8 +317,7 @@
                 </div>
             </div>
         </div>
-    </footer>
-    <script src="JS/goods2.js">
-    </script>
+    </footer>    
+    <script src="JS/goods2.js"></script>    
 </body>
 </html>

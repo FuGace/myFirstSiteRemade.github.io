@@ -1,10 +1,36 @@
-let cardsData = [
+let cardsDataTop = [
+  {
+    imgUrl: 'IMG/Layer_8.png',
+    text: 'MIMOSA LACE DRESS',
+    price: 76.95,      
+    specialOffer: false    
+  },
+  {      
+    imgUrl: 'IMG/Layer_9.png',
+    text: 'FEEL TANK',
+    price: 59.95,      
+    specialOffer: true
+  },
+  {      
+    imgUrl: 'IMG/Layer_10.jpg',
+    text: 'HOT SHORTS',
+    price: 79.95,      
+    specialOffer: false
+  },
+  {      
+    imgUrl: 'IMG/Layer_11.png',
+    text: 'PETROL SWEATER',
+    price: 21.50,      
+    specialOffer: true
+  }   
+];
+
+let cardsDataBottom = [
     {
       imgUrl: 'IMG/Layer_17.png',
       text: 'NADIA DRESS',
       price: 64.95,      
-      specialOffer: false,
-      buttonText: 'ADD TO CART'
+      specialOffer: false    
     },
     {      
       imgUrl: 'IMG/Layer_18.png',
@@ -68,9 +94,16 @@ let cardsData = [
    return listItem;    
    };
    
-   let cardList = document.querySelector('.goods__bottom-row'); 
+   let cardListBottom = document.querySelector('.goods__bottom-row'); 
    
-  for( let i = 0; i < cardsData.length; i++ ) {
-    let cardItem = renderCards( cardsData[i] );
-    cardList.appendChild(cardItem); 
+  for( let i = 0; i < cardsDataBottom.length; i++ ) {
+    let cardItem = renderCards( cardsDataBottom[i] );
+    cardListBottom.appendChild(cardItem); 
+    };
+
+  let cardListTop = document.querySelector('.goods__top-row');   
+
+  for( let i = 0; i < cardsDataTop.length; i++ ) {
+    let cardItem = renderCards( cardsDataTop[i] );
+    cardListTop.appendChild(cardItem); 
     };
