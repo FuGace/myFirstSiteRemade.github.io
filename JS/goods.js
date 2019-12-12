@@ -12,7 +12,7 @@ let cardsDataTop = [
     specialOffer: true
   },
   {      
-    imgUrl: 'IMG/Layer_10.jpg',
+    imgUrl: 'IMG/Layer_10.png',
     text: 'HOT SHORTS',
     price: 79.95,      
     specialOffer: false
@@ -22,6 +22,24 @@ let cardsDataTop = [
     text: 'PETROL SWEATER',
     price: 21.50,      
     specialOffer: true
+  },
+  {      
+    imgUrl: 'IMG/Layer_12.jpg',
+    text: 'LONG JACKET',
+    price: 120.50,      
+    specialOffer: true
+  },
+  {      
+    imgUrl: 'IMG/Layer_13.jpeg',
+    text: 'WHITE SOCKS',
+    price: 11.50,      
+    specialOffer: false
+  }, 
+  {      
+    imgUrl: 'IMG/Layer_14.jpg',
+    text: 'DINOSAUR',
+    price: 31.50,      
+    specialOffer: false
   }   
 ];
 
@@ -89,21 +107,43 @@ let cardsDataBottom = [
     let button = makeElement('a', 'good__button-pay', )
     button.textContent = 'ADD TO CART';
     button.href = '#';
-    listItem.appendChild(button);
-      
+    listItem.appendChild(button); 
+    
+  //Shop it
+    let shopIt = function(product) { 
+
+    let shopItItem = makeElement('a', 'shop-it')
+    shopItItem.href = '#';
+
+    // Картинка 
+    let img = makeElement('img', 'shop-it_img');
+    img.src = 'IMG/bag.png';
+    img.alt = 'bag.png';
+    shopItItem.appendChild(img);    
+
+    // Текст  
+    let text = makeElement('p', 'shop-it_text')
+    text.textContent = 'SHOP IT';
+    shopItItem.appendChild(text);
+
+    return shopItItem;    
+    };  
+
+    listItem.appendChild(shopIt()); 
+
    return listItem;    
    };
    
-   let cardListBottom = document.querySelector('.goods__bottom-row'); 
+  let cardListBottom = document.querySelector('.goods__bottom-row'); 
    
   for( let i = 0; i < cardsDataBottom.length; i++ ) {
-    let cardItem = renderCards( cardsDataBottom[i] );
-    cardListBottom.appendChild(cardItem); 
+    let cardItem = renderCards( cardsDataBottom[i] );    
+    cardListBottom.appendChild(cardItem);    
     };
 
   let cardListTop = document.querySelector('.goods__top-row');   
 
   for( let i = 0; i < cardsDataTop.length; i++ ) {
     let cardItem = renderCards( cardsDataTop[i] );
-    cardListTop.appendChild(cardItem); 
+    cardListTop.appendChild(cardItem);
     };

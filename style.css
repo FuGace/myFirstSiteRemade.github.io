@@ -7,6 +7,7 @@
 
 body {
     font-family: "Arial MT";
+    overflow-x: hidden;
 }
 
 .container {
@@ -205,8 +206,31 @@ a {
     width: 100%;
 }
 
-.header__slider__dots {
-    
+.header__slider_prev,
+.header__slider_next {
+    cursor: pointer;
+    position: absolute;
+    color: #ededed;
+    background-color: #ffffff;
+    padding: 50px 10px;
+    font-weight: bold;
+    font-size: 25px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.header__slider_prev {
+    left: 0;
+}
+
+.header__slider_next {
+    right: 0;
+}
+
+.header__slider_prev:hover,
+.header__slider_next:hover {
+    background-color: #fd926d;
+    transition: 0.6s ease;
 }
 
 .header__slider__dots_dot {
@@ -288,7 +312,7 @@ a {
 /* IMG menu */
 
 .container__inner__img-menu{
-    margin: 40px;
+    margin-top: 40px;
 }
 
 .container__inner__img-menu img {
@@ -298,11 +322,17 @@ a {
 /* Orange slider */
 
 .container_orange {
-    display: grid;    
+    display: inline-block;
+    width: 100%;
+    margin-top: 40px; 
 }
 
 .goods__container_orange {
-    background-color: #fd926d;
+    background-color: #fd926d;    
+}
+
+.slider-orange__header {
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -324,13 +354,30 @@ a {
 
 .slider-orange__header__arrow-left,
 .slider-orange__header__arrow-right {
-    padding: 7px 20px;
+    padding: 8px 20px;
     font-size: 30px;    
 }
 
 .slider-orange__header__arrow-right {
     background-color: #fd926d;
     color: white;
+}
+
+.goods__top-row {
+    padding: 30px 130px;
+    justify-content: space-around;
+    display: flex;
+    overflow: hidden;
+}
+
+.goods__top-row li:first-child {
+    left: -130px;
+    position: absolute;
+}
+
+.goods__top-row li:last-child {
+    right: -130px;
+    position: absolute;
 }
 
 /* Clearance */
@@ -367,7 +414,6 @@ a {
 
 /* Goods */
 
-.goods__top-row,
 .goods__bottom-row {
     display: flex;
     justify-content: space-between;
@@ -382,8 +428,14 @@ a {
     position: relative;
 }
 
+.good:hover {    
+    transform: scale(1.08);
+    transition: 0.6s ease;
+}
+
 .good__image {
     width: 220px;
+    height: 290px;
 }
 
 .good__description {
@@ -431,6 +483,36 @@ a {
     background: #fd926d;  
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+.good:hover .shop-it {
+    display: block;
+}
+
+.shop-it {
+    position: absolute;
+    background-color: #3d3d3d;
+    border-radius: 50%; 
+    width: 134px;
+    height: 134px;
+    top: 98px;
+    left: 45px;
+    opacity: 0.95;
+    display: none;
+}
+
+.shop-it .shop-it_img {
+    position: absolute;
+    top: 43px;
+    left: 52px;  
+}
+
+.shop-it .shop-it_text {
+    position: absolute;
+    color: #ffffff;
+    font-size: 12px;
+    top: 81px;
+    left: 44px;
 }
 
 /* Footer */
@@ -586,21 +668,80 @@ nav div {
     justify-content: flex-end;
 }
 
-.footer_black .footer__links {
+.footer__links {
     display: flex;
     padding: 34px 0;
 }
 
-.footer_black .footer__links a:not(:last-child) {
+.footer__links a:not(:last-child) {
     border-right: 1px solid #8d8d8d;
     padding-right: 10px;
 }
 
-.footer_black .footer__links a:not(:first-child) {
+.footer__links a:not(:first-child) {
     padding-left: 10px;
 }
 
-.footer_black .copyright {
+.copyright {
     float: right;
     line-height: 180%;
+}
+
+@media screen and (max-width: 1400px) {
+    .container_orange {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .menu__list,
+    .goods__bottom-row li:first-child,
+    .favourite-brands_links a:nth-child(n+7) {
+        display: none;
+    }
+
+    .favourite-brands_links {
+        padding: 15px 15px;
+        justify-content: space-around;
+    }
+
+    .goods__bottom-row {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .footer__global-links nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .footer__global-links nav div:nth-child(3) {
+        order: 1;
+    }
+    .footer__global-links nav div:nth-child(4) {
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 640px) {
+
+    .border__card,
+    .header__slider__dots,
+    .header__slider,
+    .subscription__email p,
+    .hide-640,
+    .goods__bottom-row li:nth-child(4),
+    .favourite-brands,
+    .container_light-grey,
+    .container_grey,
+    .footer__links {
+        display: none;
+    }
+
+    * {
+        font-size: 30px;
+    }
 }
